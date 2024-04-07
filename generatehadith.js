@@ -15,6 +15,11 @@ async function test() {
     let isocodes = await getJSON('isocodes/iso-codes', quranLinks)
     let hadithPath = saveDir
 
+    let sortedEditionsArr = ['bukhari', 'muslim', 'nasai', 'abudawud', 'tirmidhi', 'ibnmajah', 'malik']
+    let sortedEditionsJSON = {}  
+    sortedEditionsArr.concat(Object.keys(editionsJSON)).forEach(editionName=>sortedEditionsJSON[editionName]=editionsJSON[editionName])
+    editionsJSON=sortedEditionsJSON
+
             // create books index i.e list of books available
             let pathToSave = path.join(hadithPath,`index.html`)
             let dataToSave = `<ul class="list-group">${Object.entries(editionsJSON).map( e =>`<li class="list-group-item"><a href="${e[0]}">${e[1].name}</a></li>`).join('')}</ul>`

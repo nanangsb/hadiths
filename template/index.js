@@ -5,6 +5,12 @@ async function ready() {
     window.showSpinningWheel('#mycontainer','beforeend')
     
     let data = await window.getJSON('editions');
+
+    let sortedEditionsArr = ['bukhari', 'muslim', 'nasai', 'abudawud', 'tirmidhi', 'ibnmajah', 'malik']
+    let sortedEditionsJSON = {}  
+    sortedEditionsArr.concat(Object.keys(data)).forEach(editionName=>sortedEditionsJSON[editionName]=data[editionName])
+    data=sortedEditionsJSON
+
     let bigUL = getElement('ul', { class: 'list-group' })
     let count = 0
     for (let [key, value] of Object.entries(data)) {
