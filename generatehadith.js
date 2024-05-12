@@ -86,7 +86,7 @@ function getHadithCardElem(hadith, editionName, dirval, lang, isocodes) {
     ${hadith.grades.length > 0 ? `<div class="card-footer"><table class="table table-sm">
     <thead>
       <tr>
-        <th>Grade</th>
+        <th>Derajat Hadis</th>
       
       </tr>
     </thead>
@@ -94,9 +94,9 @@ function getHadithCardElem(hadith, editionName, dirval, lang, isocodes) {
     ${hadith.grades.map(grade=>`<tr><td>${capitalize(grade.grade)}</td><td>${grade.name}</td></tr>`).join('')}
     </tbody>
     </table></div>` : ''}
-    ${"hadithnumber" in hadith ? `<div class="card-footer"><a href=#${hrefVal} class="link-dark text-decoration-none" >Hadith Number: ${hadith.hadithnumber}</a><br></div>`:``}
-    ${"arabicnumber" in hadith ? `<div class="card-footer"><a href=#${hrefVal} class="link-dark text-decoration-none" >Arabic Number: ${hadith.arabicnumber}</a><br></div>` : ''}
-    ${"reference" in hadith ? `<div class="card-footer"><a href=#${hrefVal} class="link-dark text-decoration-none" >Reference: ${Object.entries(hadith.reference).flat().map(e => capitalize(e)).join(' ')}</a><br></div>` : ''}
+    ${"hadithnumber" in hadith ? `<div class="card-footer"><a href=#${hrefVal} class="link-dark text-decoration-none" >Nomor Hadis: ${hadith.hadithnumber}</a><br></div>`:``}
+    ${"arabicnumber" in hadith ? `<div class="card-footer"><a href=#${hrefVal} class="link-dark text-decoration-none" >Nomor Arab: ${hadith.arabicnumber}</a><br></div>` : ''}
+    ${"reference" in hadith ? `<div class="card-footer"><a href=#${hrefVal} class="link-dark text-decoration-none" >Referensi: ${Object.entries(hadith.reference).flat().map(e => capitalize(e)).join(' ')}</a><br></div>` : ''}
     </span>
     </div>
     `
