@@ -2,7 +2,6 @@ const path = require('path')
 const Mustache = require('mustache');
 const fs = require('fs-extra');
 const fg = require('fast-glob');
-const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 let templateDir = path.join(__dirname,'template')
 let codeDir = path.join(__dirname,'code')
 fs.mkdirSync(codeDir, {
