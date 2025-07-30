@@ -40,6 +40,8 @@ document.querySelector('#mycontainer').appendChild(getHadithCardElem(hadith, edi
 
 window.removeSpinningWheel()
 
+// scroll to hash
+window.location.href = window.location.href
 // scroll to hash Text fragment
 window.location.hash = window.getHashTextFragment()
 
